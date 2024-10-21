@@ -1,0 +1,189 @@
+.bgAbout {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3215686275), rgba(0, 0, 0, 0.3019607843)), url(../images/MService2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bgAbout h1 {
+  color: #fff;
+  font-size: 2.5em;
+  border-bottom: 1px solid #fff;
+}
+
+.flipCardSection {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 25px;
+  padding: 35px 15px;
+}
+.flipCardSection strong {
+  font-size: 1.5em;
+}
+.flipCardSection p {
+  text-align: center;
+  color: gray;
+}
+.flipCardSection .flip-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.flipCardSection .flip-cards .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  /* perspective: 1000px;  */
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flip-card-front,
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3019607843);
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flip-card-front {
+  background-color: #fff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.5em;
+  color: #007bff;
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flip-card-back {
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flip-card-back img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flipCardBackOne {
+  transform: rotateY(180deg);
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flipCardBackTwo {
+  transform: rotateX(180deg);
+}
+.flipCardSection .flip-cards .flip-card .flip-card-inner .flipCardBackThree {
+  transform: rotateX(180deg);
+}
+.flipCardSection .flip-cards .flip-card .flipCardOne:hover {
+  transform: rotateY(180deg);
+}
+.flipCardSection .flip-cards .flip-card .flipCardTwo:hover {
+  transform: rotateX(180deg);
+}
+.flipCardSection .flip-cards .flip-card .flipCardThree:hover {
+  transform: rotateX(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .flip-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 325px) {
+  .flipCardSection .flip-cards .flip-card {
+    width: 250px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 268px) {
+  .flipCardSection .flip-cards .flip-card {
+    width: 180px;
+    height: 120px;
+    font-size: 0.7em;
+    gap: 5px;
+  }
+}
+/* About Us Repair are Our Passion */
+.imgContentSectionAbout {
+  background-color: rgba(0, 0, 0, 0.0431372549);
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: normal;
+  gap: 25px;
+  padding: 25px 35px;
+}
+.imgContentSectionAbout .imgpart {
+  width: 50%;
+  overflow: hidden;
+}
+.imgContentSectionAbout .imgpart img {
+  width: 100%;
+  transition: transform 0.9s ease-in-out;
+}
+.imgContentSectionAbout .imgpart img:hover {
+  transform: scale(1.5);
+}
+.imgContentSectionAbout .someContentAbout {
+  width: 60%;
+}
+.imgContentSectionAbout .someContentAbout strong {
+  font-size: 1.8em;
+}
+.imgContentSectionAbout .someContentAbout .line {
+  padding: 0.01em 25px;
+  border-radius: 15px;
+  background-color: #007bff;
+}
+.imgContentSectionAbout .someContentAbout p {
+  color: rgb(48, 48, 48);
+}
+.imgContentSectionAbout .someContentAbout .pointsPart {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.imgContentSectionAbout .someContentAbout .pointsPart .points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  align-items: normal;
+}
+.imgContentSectionAbout .someContentAbout .pointsPart .points i {
+  color: #007bff;
+}
+
+@media screen and (max-width: 937px) {
+  .imgContentSectionAbout {
+    flex-direction: column;
+  }
+  .imgContentSectionAbout .imgpart {
+    width: 100%;
+  }
+  .imgContentSectionAbout .someContentAbout {
+    width: 100%;
+  }
+}/*# sourceMappingURL=about.css.map */

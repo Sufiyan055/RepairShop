@@ -1,0 +1,211 @@
+@mixin flexcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgAbout {
+  background: linear-gradient(45deg, #00000052, #0000004d),
+    url(../images/MService2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 55vh;
+  @include flexcontent();
+  h1 {
+    color: #fff;
+    font-size: 2.5em;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.flipCardSection {
+  font-family: Arial, sans-serif;
+  @include flexcontent();
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 25px;
+  padding: 35px 15px;
+  strong {
+    font-size: 1.5em;
+  }
+  p {
+    text-align: center;
+    color: gray;
+  }
+  .flip-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      /* perspective: 1000px;  */ // Perspective to create a 3D effect
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden; // Hide back face
+          backface-visibility: hidden;
+          border-radius: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2rem;
+          box-shadow: 0px 0px 5px 2px #0000004d;
+        }
+
+        .flip-card-front {
+          background-color: #fff;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          font-size: 1.5em;
+          color: #007bff;
+        }
+
+        .flip-card-back {
+          border-radius: 8px;
+          overflow: hidden;
+          color: white;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .flipCardBackOne {
+          transform: rotateY(180deg); // Back is rotated 180 degrees
+        }
+        .flipCardBackTwo {
+          transform: rotateX(180deg); // Back is rotated 180 degrees
+        }
+        .flipCardBackThree {
+          transform: rotateX(180deg); // Back is rotated 180 degrees
+        }
+      }
+
+      .flipCardOne {
+        &:hover {
+          transform: rotateY(180deg); // Rotate the card on hover
+        }
+      }
+      .flipCardTwo {
+        &:hover {
+          transform: rotateX(180deg); // Rotate the card on hover
+        }
+      }
+
+      .flipCardThree {
+        &:hover {
+          transform: rotateX(180deg); // Rotate the card on hover
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flip-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .flipCardSection {
+    .flip-cards {
+      .flip-card {
+        width: 250px;
+        height: 180px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 268px) {
+  .flipCardSection {
+    .flip-cards {
+      .flip-card {
+        width: 180px;
+        height: 120px;
+        font-size: 0.7em;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+/* About Us Repair are Our Passion */
+
+.imgContentSectionAbout {
+  background-color: #0000000b;
+  margin-top: 25px;
+  @include flexcontent();
+  align-items: normal;
+  gap: 25px;
+  padding: 25px 35px;
+  .imgpart {
+    width: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: transform 0.9s ease-in-out;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+  .someContentAbout {
+    width: 60%;
+    strong {
+      font-size: 1.8em;
+    }
+    .line {
+      padding: 0.01em 25px;
+      border-radius: 15px;
+      background-color: #007bff;
+    }
+    p {
+      color: rgb(48, 48, 48);
+    }
+    .pointsPart {
+      margin: 15px 0px;
+      @include flexcontent();
+      justify-content: space-between;
+      .points {
+        @include flexcontent();
+        flex-direction: column;
+        gap: 15px;
+        align-items: normal;
+        i {
+          color: #007bff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 937px) {
+  .imgContentSectionAbout {
+    flex-direction: column;
+    .imgpart {
+      width: 100%;
+    }
+    .someContentAbout {
+      width: 100%;
+    }
+  }
+}
