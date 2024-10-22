@@ -142,22 +142,35 @@ a {
       position: relative;
       .ulBar {
         flex-direction: column;
-        position: absolute;
-        top: 47px;
-        right: 18px;
+        position: fixed;
         width: 0px;
-        background-color: #fff;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        background-color: #292828d3;
         overflow: hidden;
         z-index: 111;
-        transition: width 0.2s ease-in-out, hidden 0.2s ease-in-out,
-          padding 0.2s ease-in-out;
+        transition: width 0.3s linear, overflow 0.3s linear;
         li {
-          padding: 5px 5px;
+          padding: 5px;
+          visibility: hidden;
         }
         &.ulBarActive {
-          width: 50%;
-          padding: 90px 65px;
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          width: 80%;
+          height: 100%;
+          background-color: #292828d3;
           border: 1px solid $primaryColor;
+          border-left: none;
+          li {
+            visibility: visible;
+            a {
+              color: #fff;
+              font-size: 1.4em;
+            }
+          }
         }
       }
       .menuToggle {
@@ -215,11 +228,6 @@ a {
           a {
             font-size: 0.8em;
           }
-        }
-        &.ulBarActive {
-          width: 180px;
-          height: 258px;
-          padding: 15px;
         }
       }
     }
