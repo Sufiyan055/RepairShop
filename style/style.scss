@@ -91,13 +91,16 @@ a {
     z-index: 1;
 
     .LogoNameImg {
-      background: linear-gradient(45deg, #0180ff, #318ce7);
+      background: linear-gradient(45deg, #3e94ea, #429efbac);
       padding: 5px 15px;
       border-radius: 5px;
-      box-shadow: 0px 0px 4px 3px #00000050;
+      box-shadow: 0px 0px 4px 2px #00000042;
       display: inline-flex;
       justify-content: center;
       align-items: center;
+      h1 {
+        color: #fff;
+      }
     }
     .ulBar {
       @include flexcontent();
@@ -372,7 +375,7 @@ a {
     span:nth-child(1) {
       font-size: 2.8em;
       font-weight: bolder;
-      box-shadow: 0px 0px 3px 1px #fff;
+      box-shadow: 0px 0px 3px 1px #ffffff5e;
       padding: 5px 20px;
       border-radius: 50%;
     }
@@ -478,6 +481,9 @@ a {
       gap: 5px;
       &:hover {
         transform: translateY(-10px);
+      }
+      strong {
+        text-transform: uppercase;
       }
       a {
         background-color: #318ce7;
