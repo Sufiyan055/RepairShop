@@ -10,11 +10,9 @@ const navMainBarDisplay = () => {
     pureNavbar.style.top = "0px";
     pureNavbar.style.background = "#fff";
     pureNavbar.style.padding = "8px 30px";
-    pureNavbar.style.boxShadow = "0px 0px 5px 2px #00000050";
   } else {
     pureNavbar.style.position = "relative";
     pureNavbar.style.padding = "5px 30px";
-    pureNavbar.style.boxShadow = "none";
   }
 };
 

@@ -11,6 +11,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=editor_choice"
+    />
+
     <title>Mobile Shop</title>
   </head>
   <body>
@@ -63,23 +69,51 @@
       </header>
     </section>
     <!-- SlideShow Section -->
-    <section class="bgImgSection">
-      <strong>Bring your gadget back to life.</strong>
-      <strong>Fast and Quick Fix.</strong>
-      <p>
-        Just send valuable laptop, PC, MAC, Mobile, Gaming Device or Smartphone
-        and we'll take care of it.
-      </p>
-      <a href="html/contact.html" class="btnWithWords">
-        <strong>Lets Fix Your </strong>
-        <div class="words">
-          <span>Tablet</span>
-          <span>Phone</span>
-          <span>Laptop</span>
-          <span>Camera</span>
-          <span>Tablet</span>
+    <section class="bgMainSection">
+      <div class="slider">
+        <span class="bgShade"></span>
+        <div class="list">
+          <div class="item">
+            <img src="images/MobileImg.jpg" alt="" />
+          </div>
+          <div class="item">
+            <img src="images/MService4Midsize.jpg" alt="" />
+          </div>
+          <div class="item">
+            <img src="images/MobileWallpaper.jpg" alt="" />
+          </div>
         </div>
-      </a>
+        <div class="buttons">
+          <button id="prev"><</button>
+          <button id="next">></button>
+        </div>
+        <ul class="dots">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="bgImgSection">
+        <strong>Bring your gadget back to life.</strong>
+        <strong>Fast and Quick Fix.</strong>
+        <p>
+          Just send valuable laptop, PC, MAC, Mobile, Gaming Device or
+          Smartphone and we'll take care of it.
+        </p>
+        <a href="html/contact.html" class="btnWithWords">
+          <strong>Lets Fix Your </strong>
+          <div class="words">
+            <span>Tablet</span>
+            <span>Phone</span>
+            <span>Laptop</span>
+            <span>Camera</span>
+            <span>Tablet</span>
+          </div>
+        </a>
+      </div>
     </section>
     <!-- Why choose Us -->
     <section class="chooseUsSection">
@@ -88,23 +122,34 @@
         <div class="box1">
           <i class="fa-solid fa-rocket"></i><span>WE ARE FAST</span>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-            accusantium.
+            Experience lightning-fast repairs with our dedicated technicians. We
+            prioritize quick and seamless service to keep you connected without
+            delay.
           </p>
         </div>
         <div class="box1">
           <i class="fa-solid fa-indian-rupee-sign"></i
-          ><span>NO FIX, NO FEE</span>
+          ><span>100% Satisfaction</span>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-            accusantium.
+            We offer a 90-day warranty on all our repairs, giving you peace of
+            mind and guaranteed quality service.
           </p>
         </div>
         <div class="box1">
           <i class="fa-solid fa-users"></i><span>EXPERT STAFF</span>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque,
-            accusantium.
+            Our team consists of highly skilled mobile repair technicians with
+            years of experience in diagnosing and resolving complex issues.
+          </p>
+        </div>
+        <div class="box1">
+          <i class="material-symbols-outlined"> editor_choice </i
+          ><span>Top Quality Parts</span>
+
+          <p>
+            We use only top-quality, genuine parts to ensure reliable and
+            long-lasting repairs. Your device's performance and durability are
+            our priority.
           </p>
         </div>
       </div>
@@ -158,7 +203,7 @@
             temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
             ea impedit magni tenetur.
           </p>
-          <a href="html/contact.html">Contact Us</a>
+          <a href="html/contact.html#contact-section">Contact Us</a>
         </div>
         <div class="sevicesBox">
           <div class="imgDiv">
@@ -170,7 +215,7 @@
             temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
             ea impedit magni tenetur.
           </p>
-          <a href="contact.html">Contact Us</a>
+          <a href="html/contact.html#contact-section">Contact Us</a>
         </div>
         <div class="sevicesBox">
           <div class="imgDiv">
@@ -182,7 +227,7 @@
             temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
             ea impedit magni tenetur.
           </p>
-          <a href="html/contact.html">Contact Us</a>
+          <a href="html/contact.html#contact-section">Contact Us</a>
         </div>
         <div class="sevicesBox">
           <div class="imgDiv">
@@ -194,7 +239,7 @@
             temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
             ea impedit magni tenetur.
           </p>
-          <a href="html/contact.html">Contact Us</a>
+          <a href="html/contact.html#contact-section">Contact Us</a>
         </div>
         <div class="sevicesBox">
           <div class="imgDiv">
@@ -218,7 +263,19 @@
             temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
             ea impedit magni tenetur.
           </p>
-          <a href="html/contact.html">Contact Us</a>
+          <a href="html/contact.html#contact-section">Contact Us</a>
+        </div>
+        <div class="sevicesBox">
+          <div class="imgDiv">
+            <img src="images/MService7.jpg" alt="course Image" />
+          </div>
+          <strong> Repair Smartphone</strong>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            temporibus cupiditate in maxime odit nostrum, dolorem sed aut culpa
+            ea impedit magni tenetur.
+          </p>
+          <a href="html/contact.html#contact-section">Contact Us</a>
         </div>
       </div>
 
@@ -259,23 +316,38 @@
       </div>
     </section>
 
-    <!-- What People Says About us -->
+    <!-- Customer Stories -->
 
     <section class="reviewSection">
-      <div class="reviewImgMobile">
-        <img src="images/reveiwImg.jpg" alt="Mobile Image" />
-      </div>
       <div class="reviewHere">
-        <strong>What people are says</strong>
+        <strong>Customer Stories</strong>
         <div class="review" id="review">
           <div class="peopleImg">
             <img src="images/StImg2.webp" width="50px" alt="person Image" />
           </div>
           <span></span>
           <p></p>
+          <!-- <div class="starsDate">
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="date">
+              <div class="date">5th Jan 2024</div>
+            </div>
+          </div> -->
         </div>
-        <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="btns">
+          <button id="reviewprevBtn">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="reviewnextBtn">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -348,6 +420,7 @@
     <!--  -->
 
     <!-- Script -->
+
     <script src="script/scriptTwo.js"></script>
     <script src="script/script.js"></script>
   </body>

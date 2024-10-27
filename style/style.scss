@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -87,8 +89,8 @@ a {
     @include flexcontent();
     justify-content: space-between;
     padding: 5px 30px;
-    box-shadow: 0px 0px 2px 0px #00000050;
-    z-index: 1;
+    box-shadow: 0px 0px 5px 2px #00000050;
+    z-index: 111;
 
     .LogoNameImg {
       background: linear-gradient(45deg, #3e94ea, #429efbac);
@@ -238,83 +240,178 @@ a {
 }
 
 /* SlideShow Section */
-.bgImgSection {
-  @include linearGradient(url(../images/MobileWallpaper.jpg));
-  background-position: center;
-  height: 65vh;
-  @include flexcontent();
-  flex-direction: column;
-  font-size: 1.1em;
-  padding: 15px;
-  color: #fff;
-  strong {
-    font-size: 1.8em;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  }
-  .btnWithWords {
-    margin-top: 15px;
-    box-sizing: content-box;
-    background: transparent;
-    height: 30px;
-    padding: 2px 5px;
-    display: flex;
-    border: 1px solid #fff;
-    cursor: pointer;
-    strong {
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 1.2em;
-      color: #fff;
+.bgMainSection {
+  position: relative;
+  .slider {
+    width: 1515px;
+    max-width: 100vw;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    .bgShade {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: #00000037;
+      z-index: 1;
     }
-    .words {
-      overflow: hidden;
-      span {
-        display: block;
+    .list {
+      position: absolute;
+      width: max-content;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      transition: 1s;
+      img {
+        width: 1515px;
+        max-width: 100vw;
         height: 100%;
-        padding-left: 8px;
-        padding-top: 5px;
-        animation: spin-words 6s infinite;
-        color: #0180ff;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
+        object-fit: cover;
       }
     }
-    @keyframes spin-words {
-      10% {
-        transform: translateY(-112%);
+    .buttons {
+      position: absolute;
+      top: 45%;
+      left: 5%;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      display: none;
+      button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff5;
+        color: #fff;
+        border: none;
+        font-family: monospace;
+        font-weight: bold;
       }
-      25% {
-        transform: translateY(-100%);
+    }
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      color: #fff;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      display: none;
+      li {
+        list-style: none;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        margin: 10px;
+        border-radius: 20px;
+        transition: 0.5s;
+        li.active {
+          width: 30px;
+        }
       }
-      35% {
-        transform: translateY(-212%);
+    }
+  }
+
+  .bgImgSection {
+    z-index: 111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    @include flexcontent();
+    flex-direction: column;
+    font-size: 1.1em;
+    padding: 15px;
+    color: #fff;
+    strong {
+      font-size: 1.8em;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+    }
+    .btnWithWords {
+      margin-top: 15px;
+      box-sizing: content-box;
+      background: transparent;
+      height: 30px;
+      padding: 2px 5px;
+      display: flex;
+      border: 1px solid #fff;
+      cursor: pointer;
+      strong {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2em;
+        color: #fff;
       }
-      50% {
-        transform: translateY(-200%);
+      .words {
+        overflow: hidden;
+        span {
+          display: block;
+          height: 100%;
+          padding-left: 8px;
+          padding-top: 5px;
+          animation: spin-words 6s infinite;
+          color: rgb(196, 255, 250);
+          font-family: "Montserrat";
+          font-weight: 700;
+        }
       }
-      60% {
-        transform: translateY(-312%);
-      }
-      75% {
-        transform: translateY(-300%);
-      }
-      85% {
-        transform: translateY(-412%);
-      }
-      100% {
-        transform: translateY(-400%);
+      @keyframes spin-words {
+        10% {
+          transform: translateY(-112%);
+        }
+        25% {
+          transform: translateY(-100%);
+        }
+        35% {
+          transform: translateY(-212%);
+        }
+        50% {
+          transform: translateY(-200%);
+        }
+        60% {
+          transform: translateY(-312%);
+        }
+        75% {
+          transform: translateY(-300%);
+        }
+        85% {
+          transform: translateY(-412%);
+        }
+        100% {
+          transform: translateY(-400%);
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 496px) {
-  .bgImgSection {
-    strong {
-      font-size: 1.2em;
-      text-align: center;
+  .bgMainSection {
+    .bgImgSection {
+      strong {
+        font-size: 1.2em;
+        text-align: center;
+      }
+      p {
+        font-size: 0.8em;
+      }
     }
-    p {
-      font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bgMainSection {
+    .slider {
+      height: 300px;
     }
   }
 }
@@ -462,7 +559,7 @@ a {
   @include flexcontent();
   flex-direction: column;
   padding: 15px;
-  background-color: #00000014;
+  background-color: #faf8f8;
   .subServicesSection {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -579,33 +676,37 @@ a {
 /* What People Says About us */
 
 .reviewSection {
+  background-color: #eee;
   @include flexcontent();
   gap: 15px;
-  height: auto;
+  height: 75vh;
   padding: 15px;
-  background: #1586f7aa;
-  .reviewImgMobile {
-    width: 50%;
-    height: 500px;
-    border: 2px solid #fff;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+
   .reviewHere {
     width: 50%;
+    @include flexcontent();
+    flex-direction: column;
     strong {
       font-size: 1.8em;
-      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      border-bottom: 1px solid #000;
+      text-transform: uppercase;
     }
     .review {
       margin-top: 30px;
       @include flexcontent();
-      align-items: normal;
       flex-direction: column;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      position: relative;
+      .starsDate {
+        position: absolute;
+        bottom: 15px;
+        left: 55px;
+        .star {
+          color: gold;
+        }
+      }
       .peopleImg {
         width: 102px;
         height: 85px;
@@ -622,30 +723,59 @@ a {
         margin: 15px 0px;
         font-size: 1.2em;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline;
+      }
+      p {
+        text-align: center;
+        height: 20vh;
+        overflow: hidden;
+        font-size: 1.1em;
       }
     }
-    button {
-      background-color: #fff;
-      outline: none;
-      border: 1px solid #000;
-      padding: 5px 8px;
-      margin-top: 15px;
-      cursor: pointer;
-      font-family: sans-serif;
+    .btns {
+      button {
+        background-color: #fff;
+        outline: none;
+        border: 1px solid #000;
+        padding: 5px 8px;
+        margin-top: 15px;
+        cursor: pointer;
+        font-family: sans-serif;
+      }
     }
   }
 }
 
+@media screen and (max-width: 777px) {
+  .reviewSection {
+    flex-direction: column;
+    min-height: 55vh;
+    width: 100%;
+    .reviewHere {
+      width: 100%;
+      .review {
+        p {
+          height: 18vh;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 480px) {
   .reviewSection {
     flex-direction: column;
-    min-height: 115vh;
-    .reviewImgMobile,
+    height: 70vh;
     .reviewHere {
       width: 100%;
-    }
-    .reviewImgMobile {
-      height: 300px;
+      strong {
+        font-size: 1.2em;
+      }
+      .review {
+        p {
+          height: 23vh;
+          font-size: 1em;
+        }
+      }
     }
   }
 }
