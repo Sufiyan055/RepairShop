@@ -106,6 +106,7 @@ a {
     }
     .ulBar {
       @include flexcontent();
+      z-index: 111;
       li {
         margin: 2px 15px;
         list-style: none;
@@ -169,6 +170,7 @@ a {
           background-color: #292828d3;
           border: 1px solid $primaryColor;
           border-left: none;
+          z-index: 111;
           li {
             visibility: visible;
             a {
@@ -319,7 +321,7 @@ a {
   }
 
   .bgImgSection {
-    z-index: 111;
+    z-index: 1;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -423,18 +425,25 @@ a {
   .boxesOfChooseUs {
     padding: 15px 45px;
     @include flexcontent();
-    @include gridcontent(25em, 15px);
+    @include gridcontent(35em, 15px);
     .box1 {
       i {
-        background-color: $primaryColor;
         font-size: 1.3em;
         padding: 5px 15px;
         margin: 5px 5px 5px 0px;
-        color: #fff;
-        box-shadow: 0px 0px 2px 1px #000000bb;
+        color: #007acc;
         border-radius: 2px;
         text-align: center;
+        scale: 2;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .chooseUsSection {
+    .boxesOfChooseUs {
+      @include gridcontent(25em, 15px);
     }
   }
 }
@@ -578,7 +587,8 @@ a {
       transition: transform 0.3s ease;
       gap: 5px;
       &:hover {
-        transform: translateY(-10px);
+        transform: scale(1.02);
+        border: 1px solid #007acc;
       }
       strong {
         text-transform: uppercase;
@@ -679,10 +689,12 @@ a {
   background-color: #eee;
   @include flexcontent();
   gap: 15px;
-  height: 75vh;
-  padding: 15px;
-
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 55px;
   .reviewHere {
+    position: relative;
     width: 50%;
     @include flexcontent();
     flex-direction: column;
@@ -690,6 +702,7 @@ a {
       font-size: 1.8em;
       border-bottom: 1px solid #000;
       text-transform: uppercase;
+      margin-bottom: 15px;
     }
     .review {
       margin-top: 30px;
@@ -698,15 +711,10 @@ a {
       background-color: #fff;
       border-radius: 15px;
       padding: 15px;
+      padding-bottom: 68px;
       position: relative;
-      .starsDate {
-        position: absolute;
-        bottom: 15px;
-        left: 55px;
-        .star {
-          color: gold;
-        }
-      }
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
       .peopleImg {
         width: 102px;
         height: 85px;
@@ -727,20 +735,41 @@ a {
       }
       p {
         text-align: center;
-        height: 20vh;
-        overflow: hidden;
         font-size: 1.1em;
       }
     }
     .btns {
+      position: absolute;
+      top: 26px;
+      right: 25px;
       button {
         background-color: #fff;
+        border-radius: 5px;
         outline: none;
-        border: 1px solid #000;
-        padding: 5px 8px;
+        padding: 7px 10px;
         margin-top: 15px;
         cursor: pointer;
+        border: none;
         font-family: sans-serif;
+        box-shadow: 0px 0px 3px 1px #00000042;
+        background-color: #25a4f9;
+        color: #fff;
+        transition: box-shadow 0.3s ease;
+        &:hover {
+          box-shadow: 0px 0px 6px 0px #00000042;
+          transform: scale(1.05);
+        }
+      }
+    }
+    .starsDate {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      @include flexcontent();
+      flex-direction: column;
+      gap: 5px;
+      .star {
+        color: #ed1b24;
       }
     }
   }
@@ -749,32 +778,23 @@ a {
 @media screen and (max-width: 777px) {
   .reviewSection {
     flex-direction: column;
-    min-height: 55vh;
+    min-height: 85vh;
     width: 100%;
     .reviewHere {
       width: 100%;
-      .review {
-        p {
-          height: 18vh;
-        }
-      }
     }
   }
 }
 @media screen and (max-width: 480px) {
   .reviewSection {
     flex-direction: column;
-    height: 70vh;
     .reviewHere {
       width: 100%;
+      .btns {
+        top: 20px;
+      }
       strong {
         font-size: 1.2em;
-      }
-      .review {
-        p {
-          height: 23vh;
-          font-size: 1em;
-        }
       }
     }
   }

@@ -85,6 +85,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 111;
 }
 .mainSectionNavabar .pureNavbar .ulBar li {
   margin: 2px 15px;
@@ -147,6 +148,7 @@ a {
     background-color: rgba(41, 40, 40, 0.8274509804);
     border: 1px solid #318ce7;
     border-left: none;
+    z-index: 111;
   }
   .mainSectionNavabar .pureNavbar .ulBar.ulBarActive li {
     visibility: visible;
@@ -286,7 +288,7 @@ a {
   width: 30px;
 }
 .bgMainSection .bgImgSection {
-  z-index: 111;
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -386,20 +388,26 @@ a {
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 25em);
+  grid-template-columns: repeat(auto-fill, 35em);
   gap: 15px;
 }
 .chooseUsSection .boxesOfChooseUs .box1 i {
-  background-color: #318ce7;
   font-size: 1.3em;
   padding: 5px 15px;
   margin: 5px 5px 5px 0px;
-  color: #fff;
-  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.7333333333);
+  color: #007acc;
   border-radius: 2px;
   text-align: center;
+  scale: 2;
 }
 
+@media screen and (max-width: 588px) {
+  .chooseUsSection .boxesOfChooseUs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25em);
+    gap: 15px;
+  }
+}
 @media screen and (max-width: 408px) {
   .chooseUsSection .boxesOfChooseUs {
     display: flex;
@@ -542,7 +550,8 @@ a {
   gap: 5px;
 }
 .servicesSection .subServicesSection .sevicesBox:hover {
-  transform: translateY(-10px);
+  transform: scale(1.02);
+  border: 1px solid #007acc;
 }
 .servicesSection .subServicesSection .sevicesBox strong {
   text-transform: uppercase;
@@ -637,10 +646,13 @@ a {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  height: 75vh;
-  padding: 15px;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 55px;
 }
 .reviewSection .reviewHere {
+  position: relative;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -651,6 +663,7 @@ a {
   font-size: 1.8em;
   border-bottom: 1px solid #000;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 .reviewSection .reviewHere .review {
   margin-top: 30px;
@@ -661,15 +674,9 @@ a {
   background-color: #fff;
   border-radius: 15px;
   padding: 15px;
+  padding-bottom: 68px;
   position: relative;
-}
-.reviewSection .reviewHere .review .starsDate {
-  position: absolute;
-  bottom: 15px;
-  left: 55px;
-}
-.reviewSection .reviewHere .review .starsDate .star {
-  color: gold;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .reviewSection .reviewHere .review .peopleImg {
   width: 102px;
@@ -692,47 +699,67 @@ a {
 }
 .reviewSection .reviewHere .review p {
   text-align: center;
-  height: 20vh;
-  overflow: hidden;
   font-size: 1.1em;
+}
+.reviewSection .reviewHere .btns {
+  position: absolute;
+  top: 26px;
+  right: 25px;
 }
 .reviewSection .reviewHere .btns button {
   background-color: #fff;
+  border-radius: 5px;
   outline: none;
-  border: 1px solid #000;
-  padding: 5px 8px;
+  padding: 7px 10px;
   margin-top: 15px;
   cursor: pointer;
+  border: none;
   font-family: sans-serif;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2588235294);
+  background-color: #25a4f9;
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+.reviewSection .reviewHere .btns button:hover {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2588235294);
+  transform: scale(1.05);
+}
+.reviewSection .reviewHere .starsDate {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.reviewSection .reviewHere .starsDate .star {
+  color: #ed1b24;
 }
 
 @media screen and (max-width: 777px) {
   .reviewSection {
     flex-direction: column;
-    min-height: 55vh;
+    min-height: 85vh;
     width: 100%;
   }
   .reviewSection .reviewHere {
     width: 100%;
-  }
-  .reviewSection .reviewHere .review p {
-    height: 18vh;
   }
 }
 @media screen and (max-width: 480px) {
   .reviewSection {
     flex-direction: column;
-    height: 70vh;
   }
   .reviewSection .reviewHere {
     width: 100%;
   }
+  .reviewSection .reviewHere .btns {
+    top: 20px;
+  }
   .reviewSection .reviewHere strong {
     font-size: 1.2em;
-  }
-  .reviewSection .reviewHere .review p {
-    height: 23vh;
-    font-size: 1em;
   }
 }
 /* footerSection */
