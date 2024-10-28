@@ -149,35 +149,27 @@ a {
       .ulBar {
         flex-direction: column;
         position: fixed;
-        width: 0px;
+        width: 80%;
         top: 0px;
-        left: 0px;
+        left: -850px;
         height: 100%;
         background-color: #292828d3;
         overflow: hidden;
         z-index: 111;
-        transition: width 0.3s linear, overflow 0.3s linear;
+        transition: left 0.5s ease-in-out;
         li {
           padding: 5px;
-          visibility: hidden;
+          a {
+            color: #fff;
+            font-size: 1.4em;
+          }
         }
         &.ulBarActive {
-          position: fixed;
-          top: 0px;
           left: 0px;
-          width: 80%;
           height: 100%;
-          background-color: #292828d3;
           border: 1px solid $primaryColor;
           border-left: none;
           z-index: 111;
-          li {
-            visibility: visible;
-            a {
-              color: #fff;
-              font-size: 1.4em;
-            }
-          }
         }
       }
       .menuToggle {
@@ -229,13 +221,6 @@ a {
     .pureNavbar {
       .LogoNameImg {
         font-size: 0.7em;
-      }
-      .ulBar {
-        li {
-          a {
-            font-size: 0.8em;
-          }
-        }
       }
     }
   }
@@ -418,6 +403,25 @@ a {
   }
 }
 
+@media screen and (max-width: 260px) {
+  .bgMainSection {
+    .bgImgSection {
+      .btnWithWords {
+        height: 20px;
+        strong {
+          font-size: 0.7em;
+          margin-top: 3px;
+        }
+        .words {
+          span {
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+  }
+}
+
 /* Why Choose Us Section */
 
 .chooseUsSection {
@@ -436,19 +440,33 @@ a {
         text-align: center;
         scale: 2;
       }
+      .wordBox {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.3em;
+        margin-left: 5px;
+      }
+      p {
+        margin-top: 8px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 588px) {
+@media screen and (max-width: 1225px) {
   .chooseUsSection {
     .boxesOfChooseUs {
-      @include gridcontent(25em, 15px);
+      @include gridcontent(25em, 30px);
+      .box1 {
+        .wordBox {
+          font-size: 1em;
+        }
+      }
     }
   }
 }
 
-@media screen and (max-width: 408px) {
+@media screen and (max-width: 409px) {
   .chooseUsSection {
     .boxesOfChooseUs {
       @include flexcontent();
@@ -457,6 +475,10 @@ a {
         @include flexcontent();
         flex-direction: column;
         flex-wrap: wrap;
+        .wordBox {
+          margin-left: 0px;
+          margin-top: 13px;
+        }
         p {
           text-align: center;
         }
@@ -472,13 +494,19 @@ a {
   background-attachment: fixed;
   height: 50vh;
   color: #fff;
+  .strongHead {
+    font-size: 1.4em;
+  }
   .serviceLine {
     text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
   }
   .servicesSteps {
+    height: 100%;
     @include flexcontent();
     gap: 45px;
-    height: 30vh;
+
     span:nth-child(1) {
       font-size: 2.8em;
       font-weight: bolder;
@@ -492,6 +520,9 @@ a {
     .steps {
       @include flexcontent();
       gap: 20px;
+      .stepOne {
+        padding: 5px 23px;
+      }
       .fa-arrow-down {
         display: none;
       }
@@ -530,6 +561,9 @@ a {
       }
       .steps {
         position: relative;
+        .stepOne {
+          padding: 5px 18px;
+        }
         .fa-arrow-right {
           display: none;
         }
@@ -547,6 +581,12 @@ a {
 
 @media screen and (max-width: 597px) {
   .serviceProcessSection {
+    .strongHead {
+      font-size: 1.2em;
+    }
+    .serviceLine {
+      font-size: 0.9em;
+    }
     .servicesSteps {
       margin-left: 85px;
     }
@@ -556,6 +596,15 @@ a {
 @media screen and (max-width: 371px) {
   .serviceProcessSection {
     height: 80vh;
+    .servicesSteps {
+      margin-left: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .serviceProcessSection {
+    height: 90vh;
     .servicesSteps {
       margin-left: 15px;
     }

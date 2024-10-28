@@ -126,36 +126,28 @@ a {
   .mainSectionNavabar .pureNavbar .ulBar {
     flex-direction: column;
     position: fixed;
-    width: 0px;
+    width: 80%;
     top: 0px;
-    left: 0px;
+    left: -850px;
     height: 100%;
     background-color: rgba(41, 40, 40, 0.8274509804);
     overflow: hidden;
     z-index: 111;
-    transition: width 0.3s linear, overflow 0.3s linear;
+    transition: left 0.5s ease-in-out;
   }
   .mainSectionNavabar .pureNavbar .ulBar li {
     padding: 5px;
-    visibility: hidden;
+  }
+  .mainSectionNavabar .pureNavbar .ulBar li a {
+    color: #fff;
+    font-size: 1.4em;
   }
   .mainSectionNavabar .pureNavbar .ulBar.ulBarActive {
-    position: fixed;
-    top: 0px;
     left: 0px;
-    width: 80%;
     height: 100%;
-    background-color: rgba(41, 40, 40, 0.8274509804);
     border: 1px solid #318ce7;
     border-left: none;
     z-index: 111;
-  }
-  .mainSectionNavabar .pureNavbar .ulBar.ulBarActive li {
-    visibility: visible;
-  }
-  .mainSectionNavabar .pureNavbar .ulBar.ulBarActive li a {
-    color: #fff;
-    font-size: 1.4em;
   }
   .mainSectionNavabar .pureNavbar .menuToggle {
     display: block;
@@ -201,9 +193,6 @@ a {
 @media screen and (max-width: 596px) {
   .mainSectionNavabar .pureNavbar .LogoNameImg {
     font-size: 0.7em;
-  }
-  .mainSectionNavabar .pureNavbar .ulBar li a {
-    font-size: 0.8em;
   }
 }
 /* SlideShow Section */
@@ -378,6 +367,18 @@ a {
     height: 300px;
   }
 }
+@media screen and (max-width: 260px) {
+  .bgMainSection .bgImgSection .btnWithWords {
+    height: 20px;
+  }
+  .bgMainSection .bgImgSection .btnWithWords strong {
+    font-size: 0.7em;
+    margin-top: 3px;
+  }
+  .bgMainSection .bgImgSection .btnWithWords .words span {
+    font-size: 0.7em;
+  }
+}
 /* Why Choose Us Section */
 .chooseUsSection {
   margin: 60px 0px;
@@ -400,15 +401,27 @@ a {
   text-align: center;
   scale: 2;
 }
+.chooseUsSection .boxesOfChooseUs .box1 .wordBox {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+.chooseUsSection .boxesOfChooseUs .box1 p {
+  margin-top: 8px;
+}
 
-@media screen and (max-width: 588px) {
+@media screen and (max-width: 1225px) {
   .chooseUsSection .boxesOfChooseUs {
     display: grid;
     grid-template-columns: repeat(auto-fill, 25em);
-    gap: 15px;
+    gap: 30px;
+  }
+  .chooseUsSection .boxesOfChooseUs .box1 .wordBox {
+    font-size: 1em;
   }
 }
-@media screen and (max-width: 408px) {
+@media screen and (max-width: 409px) {
   .chooseUsSection .boxesOfChooseUs {
     display: flex;
     justify-content: center;
@@ -421,6 +434,10 @@ a {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  .chooseUsSection .boxesOfChooseUs .box1 .wordBox {
+    margin-left: 0px;
+    margin-top: 13px;
   }
   .chooseUsSection .boxesOfChooseUs .box1 p {
     text-align: center;
@@ -435,15 +452,20 @@ a {
   height: 50vh;
   color: #fff;
 }
+.serviceProcessSection .strongHead {
+  font-size: 1.4em;
+}
 .serviceProcessSection .serviceLine {
   text-align: center;
+  text-transform: capitalize;
+  font-size: 1.2em;
 }
 .serviceProcessSection .servicesSteps {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 45px;
-  height: 30vh;
 }
 .serviceProcessSection .servicesSteps span:nth-child(1) {
   font-size: 2.8em;
@@ -460,6 +482,9 @@ a {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+.serviceProcessSection .servicesSteps .steps .stepOne {
+  padding: 5px 23px;
 }
 .serviceProcessSection .servicesSteps .steps .fa-arrow-down {
   display: none;
@@ -495,6 +520,9 @@ a {
   .serviceProcessSection .servicesSteps .steps {
     position: relative;
   }
+  .serviceProcessSection .servicesSteps .steps .stepOne {
+    padding: 5px 18px;
+  }
   .serviceProcessSection .servicesSteps .steps .fa-arrow-right {
     display: none;
   }
@@ -507,6 +535,12 @@ a {
   }
 }
 @media screen and (max-width: 597px) {
+  .serviceProcessSection .strongHead {
+    font-size: 1.2em;
+  }
+  .serviceProcessSection .serviceLine {
+    font-size: 0.9em;
+  }
   .serviceProcessSection .servicesSteps {
     margin-left: 85px;
   }
@@ -514,6 +548,14 @@ a {
 @media screen and (max-width: 371px) {
   .serviceProcessSection {
     height: 80vh;
+  }
+  .serviceProcessSection .servicesSteps {
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 299px) {
+  .serviceProcessSection {
+    height: 90vh;
   }
   .serviceProcessSection .servicesSteps {
     margin-left: 15px;
