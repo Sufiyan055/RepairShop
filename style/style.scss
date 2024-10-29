@@ -494,6 +494,7 @@ a {
   background-attachment: fixed;
   height: 50vh;
   color: #fff;
+  overflow: hidden;
   .strongHead {
     font-size: 1.4em;
   }
@@ -506,6 +507,7 @@ a {
     height: 100%;
     @include flexcontent();
     gap: 45px;
+    overflow: hidden;
 
     span:nth-child(1) {
       font-size: 2.8em;
