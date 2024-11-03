@@ -240,7 +240,7 @@ a {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  display: none;
+  z-index: 11;
 }
 .bgMainSection .slider .buttons button {
   width: 50px;
@@ -248,9 +248,10 @@ a {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3333333333);
   color: #fff;
-  border: none;
   font-family: monospace;
   font-weight: bold;
+  border: none;
+  font-size: 2.5em;
 }
 .bgMainSection .slider .dots {
   position: absolute;
@@ -353,6 +354,19 @@ a {
   }
 }
 
+@media screen and (max-width: 1131px) {
+  .bgMainSection .slider .buttons {
+    width: 90px;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bgMainSection .slider .buttons button {
+    width: 35px;
+    height: 35px;
+    font-size: 2em;
+  }
+}
 @media screen and (max-width: 496px) {
   .bgMainSection .bgImgSection strong {
     font-size: 1.2em;
