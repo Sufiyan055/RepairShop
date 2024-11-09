@@ -131,7 +131,7 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 895px) {
+@media screen and (max-width: 907px) {
   .mainSectionNavabar .pureNavbar {
     position: relative;
   }
@@ -445,13 +445,12 @@ a {
   gap: 15px;
 }
 .chooseUsSection .boxesOfChooseUs .box1 i {
-  font-size: 1.3em;
-  padding: 5px 15px;
+  font-size: 2.3em;
+  padding: 2px 15px;
   margin: 5px 5px 5px 0px;
   color: #007acc;
   border-radius: 2px;
   text-align: center;
-  scale: 2;
 }
 .chooseUsSection .boxesOfChooseUs .box1 .wordBox {
   text-transform: uppercase;
@@ -626,8 +625,8 @@ a {
 }
 .servicesSection .subServicesSection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
   margin-top: 25px;
   padding: 0px 15px;
 }
@@ -637,13 +636,16 @@ a {
   align-items: center;
   flex-direction: column;
   align-items: normal;
+  justify-content: flex-start;
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #e1e1e1;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   gap: 5px;
+  border: 1px solid #318ce7;
+  position: relative;
 }
 .servicesSection .subServicesSection .sevicesBox:hover {
   transform: scale(1.02);
@@ -652,27 +654,35 @@ a {
 .servicesSection .subServicesSection .sevicesBox strong {
   text-transform: uppercase;
 }
+.servicesSection .subServicesSection .sevicesBox p {
+  text-wrap: wrap;
+}
 .servicesSection .subServicesSection .sevicesBox a {
   background-color: #318ce7;
   text-align: center;
   padding: 5px 2px;
-  border-radius: 8px;
+  border-radius: 4px;
   color: #fff;
   transition: background-color 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: -30px;
+  width: 105px;
 }
 .servicesSection .subServicesSection .sevicesBox a:hover {
   background-color: #007acc;
 }
 .servicesSection .subServicesSection .sevicesBox .imgDiv img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 5px;
   margin-bottom: 20px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .servicesSection .allServices {
-  margin-top: 35px;
+  margin-top: 85px;
   background: transparent;
   outline: none;
   border: none;
